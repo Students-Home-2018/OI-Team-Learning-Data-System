@@ -1,6 +1,8 @@
 # OI-Team-Learning-Data-System
 
-OI:Olympics in Informations，说人话就是信息学团队知识系统。
+OI:Olympics in Informations，即信息学团队知识系统。
+
+本系统来自潮州市金山中学信息学团队。
 
 ## 针对对象
 
