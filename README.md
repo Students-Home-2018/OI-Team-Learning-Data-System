@@ -10,8 +10,8 @@ OI:Olympics in Informations，即信息学团队知识系统。
 
 学习资料由制作人员制作而成，耗费了一定的心血，成品将密封保存在网盘中。
 
-
+下一届的成员大可直接fork这个项目直接接手。
 
 ## 制作人员
 
-Garen; ...
+Garen-Wang; Kylin-She...
