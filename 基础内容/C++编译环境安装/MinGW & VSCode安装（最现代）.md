@@ -20,6 +20,10 @@
 
 但是如果你想要更现代的编译环境，请使用MinGW & VSCode。
 
+先给张图片吊吊胃口（我现在就在用）：
+
+![](images/interface_vscode.jpg)
+
 ## 安装MinGW
 
 MinGW(minimalist GNU for Windows)，是在windows上面模拟一个编译环境，这个软件有许多编译环境可供选择。
