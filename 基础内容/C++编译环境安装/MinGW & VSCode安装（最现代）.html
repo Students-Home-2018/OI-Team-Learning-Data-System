@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="mingw--vscode%E5%AE%89%E8%A3%85%EF%BC%88%E6%9C%80%E7%8E%B0%E4%BB%A3%EF%BC%89">MinGW &amp; VSCode安装（最现代）</h1>
+<p>2018.07.07 作者：王樾</p>
+<hr>
+<h2 id="%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D">前面的话</h2>
+<p>好的，我想你是因为“最现代”这三个字而吸引过来的。</p>
+<p>我开始讲DevC++的坏话，<s>即使我也是从DevC++开始用的</s>：</p>
+<blockquote>
+<p>DevC++年代久远，其编译器早就已经过时，这个IDE也很老旧，有时还有bug。</p>
+<p>在网上还看过一篇文章，好像叫多少个不用DevC++的理由。</p>
+<p>我初学的时候就看过那一篇，但不妨碍我继续用。</p>
+</blockquote>
+<p>如果只是想要简简单单地编译一个cpp文件，那么DevC++是适合你的。</p>
+<p>但是如果你想要更现代的编译环境，请使用MinGW &amp; VSCode。</p>
+<p>先给张图片吊吊胃口（我现在就在用）：</p>
+<p><img src="file:///home/garen/GitHub/OI-Team-Learning-Data-System/images/interface_vscode.jpg" alt=""></p>
+<h2 id="%E5%AE%89%E8%A3%85mingw">安装MinGW</h2>
+<p>MinGW(minimalist GNU for Windows)，是在windows上面模拟一个编译环境，这个软件有许多编译环境可供选择。</p>
+<p>而在这个环境中，就有编译C++的编译器g++。</p>
+<p>当然如果你像我一样在用linux的话，就不用专门安装某一个东西。因为linux自带g++。</p>
+<p>安装方法虽然简单，但是时间要很久。</p>
+<p>直接可以去官网按download下载个安装包，这个东西好像是在线安装的。</p>
+<p>有一个注意的点：</p>
+<p><strong>选择安装组件的时候，请打勾(mark)所有的选项，然后在左上角第一个菜单按apply。</strong></p>
+<p>你全部安装下来最保险了，反正也占不了多大空间，免得差了东西又回去下载。</p>
+<p>如果成功地安装到最后的话，请打开cmd，在里面打一个&quot;g++&quot;。</p>
+<p>最开始应该会告诉你：“g++”不是一个可执行的语句。</p>
+<p>那么按照下列方法添加环境变量：</p>
+<ol>
+<li>
+<p>右键桌面上的“计算机”，点击“属性”。</p>
+</li>
+<li>
+<p>在左边点击“高级设置”。</p>
+</li>
+<li>
+<p>进入“性能”，在最下面有一个“环境变量设置”，点击它。</p>
+</li>
+<li>
+<p>打开你的MinGW目录，默认安装在C:/MinGW。</p>
+</li>
+<li>
+<p>复制其中bin文件夹的绝对路径，按资源管理器上面那一行路径，然后全部复制。</p>
+</li>
+<li>
+<p>在下面的系统变量中，找到一个叫做“Path”的变量。</p>
+</li>
+<li>
+<p>这个时候要分类讨论了：</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>如果所用系统为windows7，在最后添加一个英文中的分号（;），然后Ctrl+V。</p>
+</li>
+<li>
+<p>如果所用系统为windows10，点击“添加”，粘贴，确定添加。</p>
+</li>
+</ul>
+<ol start="8">
+<li>退出这些东西。</li>
+</ol>
+<p>接下来回到你的cmd，打出&quot;g++&quot;。</p>
+<p>如果回复是**“g++ no input file”**的话，恭喜你成功了！</p>
+<h2 id="%E5%AE%89%E8%A3%85vscode">安装VSCode</h2>
+<p>VScode(Visual Studio Code)，是一个轻量级代码编辑器，是Microsoft的<strong>开源</strong>产品！<s>我现在就在用。</s></p>
+<p>相信大家相比起来，更听说过VS。但是VS占空间极大，如果不是专业开发人员使用，可能不值得。</p>
+<p>Microsoft这几年拥抱开源了，VSCode就是其中一个产品，这些东西也许是收购GitHub的伏笔吧。</p>
+<p>好的，回到正题。</p>
+<p>直接点开官网，首页就可以下载，只不过x86（32位）的同学可能要找一下。</p>
+<p>安装也简单，就不讲了。</p>
+<p>点开VSCode，开始我们下一步的操作。</p>
+<p>我们可以在VSCode上安装插件，因为开源，所以才有那么多的插件。</p>
+<p>我推荐的插件有以下：</p>
+<ul>
+<li>
+<p>C/C++：有这个插件才有C++的自动补全、调试等功能。</p>
+</li>
+<li>
+<p>Code Runner：这个插件太好用了！有相关编译环境的时候，只需要直接右键“Run Code”，就可以运行你的程序，现在你可以去试试看。</p>
+</li>
+<li>
+<p>One Dark Pro：恩，这个是一个主题插件，内含一个叫做“One Dark Pro”的主题。在左下角的设置中的“颜色主题”可以更改。</p>
+</li>
+<li>
+<p>Vim：大家用过Vim吗？我觉得大家可以去试试看。</p>
+</li>
+</ul>
+<p>对于不同的语言，有许多好用的插件，可以自己去百度了解一下。</p>
+<p>运行程序，使用Code Runner就可以解决，但是调试部分就需要自己动手。</p>
+<p>文件夹中附上了两个文件：launch.json和tasks.json。前者作用是开始调试，后者作用是编译程序。因为只有在编译时加上一个“-g”，才能用来编译。</p>
+<p>接下来是配置调试功能的教程：</p>
+<ol>
+<li>
+<p>点开左边从上往下第四个按钮，点击那个齿轮，选择gdb，然后就跳出来一个launch.json的编辑窗口。</p>
+</li>
+<li>
+<p>把文件夹中的launch.json全部东西都复制进去。</p>
+</li>
+<li>
+<p>在左边点一下运行，会提示你没有一个叫build的任务，点击“配置tasks.json”。</p>
+</li>
+<li>
+<p>也把文件夹中的tasks.json复制进去。</p>
+</li>
+<li>
+<p>点开一个c++源程序，在一行的左边点一下，会有一个红点，这叫做断点(breakpoint)。</p>
+</li>
+<li>
+<p>点击开始调试，如果出现一个终端，程序运行暂停的话，那么你成功了！</p>
+</li>
+</ol>
+<p>VSCode里面有单步进入(F10)和单步跳过(F11)，具体的调试自己要去实践一下。</p>
+<p>有一个监视栏，可以在每一步中观察一个变量的值，非常有用。</p>
+<p>注意：调试是不能回跳的，如果想回到过去的话，只能够重新运行。</p>
+<h2 id="%E5%90%8E%E9%9D%A2%E7%9A%84%E8%AF%9D">后面的话</h2>
+<p>写的东西挺多，想当初我折腾这个东西的时候也非常痛苦。</p>
+<p>VScode也有好多东西可以用，不只是用来写C++。比如用Git管理你的项目。</p>
+<p>不过该折腾的还是得折腾的。。。</p>
+<p>再见！</p>
+
+    </body>
+    </html>

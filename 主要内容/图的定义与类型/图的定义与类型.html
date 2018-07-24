@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="%E5%9B%BE%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%B1%BB%E5%9E%8B">图的定义与类型</h1>
+<p>作者：王樾 2018.07.24</p>
+<hr>
+<h2 id="%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D">前面的话</h2>
+<p>下面将要介绍的内容，统称图论(graph theory)，图是图论的基本研究对象。</p>
+<p>图论是信息学竞赛的一大考点，也是计算机科学中的一大组成部分，初赛也有很大篇幅。</p>
+<p>Wikipedia说图论是数学。。。确实是数学，不过是可以用计算机解决的数学题。</p>
+<p>听说过七桥问题吗？就是那个欧拉解决的一笔画问题。那就是一种图论。</p>
+<p>给你们随便弄一张图片看看，图就是长这个样子：</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/6n-graph2.svg/375px-6n-graph2.svg.png" alt=""></p>
+<p>下面开始介绍图论的基础知识：图的定义与类型。</p>
+<h2 id="%E5%9B%BE%E7%9A%84%E5%AE%9A%E4%B9%89">图的定义</h2>
+<p>一般使用二元组（就是含有两个元素的一个东西）定义图。</p>
+<p>设一张图为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit">G</span></span></span></span>，那么它就是一个二元组<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>V</mi><mo separator="true">,</mo><mi>E</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(V, E)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.22222em;">V</span></span></span></span>代表点集，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span>代表边集。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.22222em;">V</span></span></span></span>中的元素就是一个数字，代表图中点的下标。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span>中的元素又是一个二元组（以后不止二元）<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>，代表从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">x</span></span></span></span>点到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>点有一条边。</p>
+<p><strong>其实定义这种东西听一听就可以了，实际没什么运用。</strong></p>
+<h2 id="%E5%9B%BE%E7%9A%84%E7%B1%BB%E5%9E%8B">图的类型</h2>
+<ol>
+<li>根据边是否有方向，可以分为两种：有向图和无向图。</li>
+</ol>
+<h3 id="%E6%9C%89%E5%90%91%E5%9B%BE">有向图</h3>
+<p>可以简单地理解为“单行道路”，比如给你一条边<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1,3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span></span>，那么你可以从1点走到3点，但不能从3点走到1点。</p>
+<h3 id="%E6%97%A0%E5%90%91%E5%9B%BE">无向图</h3>
+<p>可以理解为“双向道路”，用上边的例子，与有向边的不同之处就是：有了这条道路之后，可以从3点走回1点。</p>
+<p>有一个重要的点：<strong>无向边相当于一条正的和一条反的有向边</strong>。很容易理解。</p>
+<p>找到了两个图，这两个图其实是等价的。</p>
+<p><img src="http://obvjfxxhr.bkt.clouddn.com/graph_2.PNG" alt=""></p>
+<p><img src="http://obvjfxxhr.bkt.clouddn.com/graph_3.PNG" alt=""></p>
+<ol start="2">
+<li>根据图中是否有特殊的边，可以分为两种：简单图和多重图。</li>
+</ol>
+<h3 id="%E7%AE%80%E5%8D%95%E5%9B%BE">简单图</h3>
+<p><s>顾名思义就是很简单的图了</s></p>
+<p>定义是这样的：如果一个图没有<strong>自环</strong>和<strong>重边</strong>，那么这个图是简单图。</p>
+<p>自环是什么？可以参照上面的图。在顶点1处就有一个自环。边的两端都是同一个点，就是一个自环。</p>
+<p>重边呢？假设从1点从2点只有一条边，那么就没有重边。反之，从1点到2点有2条甚至更多条边的花，这个图就有重边。</p>
+<p>没有这两种东西，图确实变得很简单。。。</p>
+<h3 id="%E5%A4%9A%E9%87%8D%E5%9B%BE">多重图</h3>
+<p>emmm，不是简单图就是多重图了。</p>
+<ol start="3">
+<li>根据边的数量，可以分为两种：稀疏图和稠密图。</li>
+</ol>
+<h3 id="%E7%A8%80%E7%96%8F%E5%9B%BE">稀疏图</h3>
+<p>意思就是这张图很稀疏，也就是边很少。</p>
+<p>一般认为比完全图边数少很多的就是稀疏图。</p>
+<h3 id="%E7%A8%A0%E5%AF%86%E5%9B%BE">稠密图</h3>
+<p>就是边很多的图啦。。。</p>
+<p>一般也认为比完全图边数少不多的就是稠密图。</p>
+<h3 id="%E5%AE%8C%E5%85%A8%E5%9B%BE">完全图</h3>
+<p>~~哇到底什么是完全图啊？？？~~这就来介绍。</p>
+<p>完全图就是每一个点都与其他的点相连接的图。</p>
+<p>相信大家应该学过多边形的对角线计算公式<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>=</mo><mfrac><mrow><mi>n</mi><mo>×</mo><mo>(</mo><mi>n</mi><mo>−</mo><mn>3</mn><mo>)</mo></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">s = \frac{n \times (n - 3)}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.355em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">n</span><span class="mbin mtight">×</span><span class="mopen mtight">(</span><span class="mord mathit mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">3</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<p>完全图的边数是可以计算出来的。这里分两种情况。</p>
+<p>有向图完全图的边数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>×</mo><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">n \times (n - 1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathit">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>，无向图完全图的边数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>n</mi><mo>×</mo><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{n \times (n - 1)}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.355em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">n</span><span class="mbin mtight">×</span><span class="mopen mtight">(</span><span class="mord mathit mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>。</p>
+<h3 id="%E8%BF%9E%E9%80%9A%E5%9B%BE">连通图</h3>
+<p>再补充一个。如果任意两个点之间都存在路径（都连通），那么这个图是连通图。</p>
+<h2 id="%E5%9B%BE%E7%9A%84%E6%A6%82%E5%BF%B5">图的概念</h2>
+<ul>
+<li>子图(sub-graph)</li>
+</ul>
+<p>从一个完整的图中删去或不删去一些点和边，所形成的新图就是原图的子图。</p>
+<p>还是上面那张图。把那个自环删去，边不改变，新图就是原图的子图。</p>
+<ul>
+<li>度(degree)</li>
+</ul>
+<p><s>不是问一个点近视多少度</s></p>
+<p>一个点的度定义为有多少条边与之相关联。看不懂的话继续看。</p>
+<p>度细分为两种：入度和出度。</p>
+<p>一个点的入度意思就是有多少条边进入这个点，换句话说就是有多少条边的终点是这个点。</p>
+<p>出度也差不多的意思。</p>
+<p>有图论算法需要用到入度和出度，最好记下来。</p>
+<ul>
+<li>距离(distance)</li>
+</ul>
+<p>嘴上说的是距离，其实是最短路。两个点的距离是他们的最短路。</p>
+<p>如果两个点无法到达，那么这两个点的距离为INF（无穷大）。</p>
+<p>最短路如果有兴趣，可以去选学内容探究一下。</p>
+<ul>
+<li>生成树</li>
+</ul>
+<p>就是在图中删边，删到变成一颗串联起所有边的树，得到的树就是图的生成树。</p>
+<p>生成树是一种树，自然拥有许多树的性质，这里就不赘述了。</p>
+<h2 id="%E5%90%8E%E9%9D%A2%E7%9A%84%E8%AF%9D">后面的话</h2>
+<p>最基本的图论内容就讲到这里了。</p>
+<p>想要了解更多的内容，可以点下下面的参考资料。我觉得都很不错。<s>至少比我写的好</s></p>
+<p>再见。</p>
+<h2 id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</h2>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%9B%BE_(%E6%95%B0%E5%AD%A6)">https://zh.wikipedia.org/wiki/图_(数学)</a></p>
+<p><a href="https://www.cnblogs.com/sun-haiyu/p/7530714.html">https://www.cnblogs.com/sun-haiyu/p/7530714.html</a></p>
+<p>PS：wikipedia里面的东西几乎跟我这个一样。<s>因为大部分是抄的</s></p>
+
+    </body>
+    </html>

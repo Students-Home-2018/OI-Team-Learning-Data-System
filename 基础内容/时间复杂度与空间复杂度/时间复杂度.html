@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">时间复杂度</h1>
+<p>2018.06.27 作者：黄宏基</p>
+<hr>
+<blockquote>
+<p>计算机科学中，算法的时间复杂度是一个函数，它定量描述了该算法的运行时间。这是一个关于代表算法输入值的字符串的长度的函数。时间复杂度常用大O符号表述，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可被称为是渐近的，它考察当输入值大小趋近无穷时的情况。</p>
+</blockquote>
+<p><strong>一个算法中语句执行次数称为时间频度，记为T(n)</strong></p>
+<p>如下面这段代码：</p>
+<pre class="hljs"><code><div>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">run</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span>
+    </span>{
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) <span class="hljs-comment">//需要执行n+1次</span>
+        {
+        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"hello world"</span>; <span class="hljs-comment">//需要执行n次</span>
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">//需要执行一次</span>
+    }
+</div></code></pre>
+<p>则这段代码需要(n+1)+n+1=2n+2次运算。
+我们把算法需要执行的运算次数用输入大小n的函数表示，即T(n) 。</p>
+<p><strong>那么当我们拿到算法的执行次数函数T（n）之后怎么得到算法的时间复杂度呢？</strong></p>
+<p>1.我们知道常数项并不影响函数的增长速度，所以当T(n)=c，c为一个常数的时候，我们说这个算法的时间复杂度为O(1)；如果T(n)不等于一个常数项时，直接将常数项省略。
+如：</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"hello world"</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<p>这时，这段代码的T(n)=2,所以我们说这段代码的时间复杂度为O(1)
+当T(n)=2n+2时,此时的时间复杂度为O(n)</p>
+<p>2.我们知道高次项对于函数的增长速度的影响是最大的，n^3的增长速度是远超n^2的，同时n^2的增长速度是远超n的。同时因为要求的精度不高，所以我们直接忽略低次项。
+比如:
+当T(n)=n^3+n^2+1，此时时间复杂度为O(n^3)。</p>
+<p>3.因为函数的阶数对函数的增长速度的影响是最显著的，所以我们忽略与最高阶相乘的常数。
+比如：
+当T(n)=3n^3，此时时间复杂度为O(n^3)。</p>
+<p><strong>综合起来：如果一个算法的执行次数是T(n)，那么只保留最高次项，同时忽略最高项的系数后得到函数 f(n)，此时算法的时间复杂度就是 O(f(n))。</strong></p>
+<p><strong>大O推导法：</strong></p>
+<ol>
+<li>对于一个循环，假设循环体的时间复杂度为O(n)，循环次数为m，则这个循环的时间复杂度为 O(n×m)。</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span>
+</span>{
+   <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) \\循环次数 n
+     {
+       <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"hello world"</span>; \\循环体的时间复杂度为O(<span class="hljs-number">1</span>)
+     }
+}
+</div></code></pre>
+<p>时间复杂度为O(n)</p>
+<ol start="2">
+<li>对于多个循环，假设循环体的时间复杂度为O(n)，各个循环的循环次数分别是a, b, c...，则这个循环的时间复杂度为O(n×a×b×c...)。分析的时候应该由里向外分析这些循环。</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">aFunc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {         <span class="hljs-comment">// 循环次数为 n</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {       <span class="hljs-comment">// 循环次数为 n</span>
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello, World!\n"</span>);      <span class="hljs-comment">// 循环体时间复杂度为 O(1)</span>
+        }
+    }
+}
+</div></code></pre>
+<p>此时时间复杂度为 O(n × n × 1)，即 O(n^2)。</p>
+<ol start="3">
+<li>对于顺序执行的语句或者算法，总的时间复杂度等于其中最大的时间复杂度。</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">aFunc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+    <span class="hljs-comment">// 第一部分时间复杂度为 O(n^2)</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello, World!\n"</span>);
+        }
+    }
+    <span class="hljs-comment">// 第二部分时间复杂度为 O(n)</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello, World!\n"</span>);
+    }
+}
+</div></code></pre>
+<p>此时时间复杂度为 max(O(n^2), O(n))，即 O(n^2)。</p>
+<ol start="4">
+<li>对于条件判断语句，总的时间复杂度等于其中 时间复杂度最大的路径 的时间复杂度。</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">aFunc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+    <span class="hljs-keyword">if</span> (n &gt;= <span class="hljs-number">0</span>) {
+        <span class="hljs-comment">// 第一条路径时间复杂度为 O(n^2)</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
+                <span class="hljs-built_in">printf</span>(<span class="hljs-string">"输入数据大于等于零\n"</span>);
+            }
+        }
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// 第二条路径时间复杂度为 O(n)</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) {
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"输入数据小于零\n"</span>);
+        }
+    }
+}
+</div></code></pre>
+<p>此时时间复杂度为 max(O(n^2), O(n))，即 O(n^2)。</p>
+<h2 id="%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</h2>
+<p><a href="https://www.jianshu.com/p/f4cca5ce055a">https://www.jianshu.com/p/f4cca5ce055a</a></p>
+
+    </body>
+    </html>

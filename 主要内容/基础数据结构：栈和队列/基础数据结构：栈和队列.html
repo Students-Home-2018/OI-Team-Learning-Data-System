@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9A%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97">基础数据结构：栈和队列</h1>
+<p>2018.06.26 作者：王樾</p>
+<hr>
+<h2 id="%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D">前面的话</h2>
+<p>现在我们来正式地接触一下数据结构。</p>
+<p>数据结构(data structres)，用直白的话讲就是用来装数据的结构。</p>
+<p>许多的数据结构具有一定的性质，所以可以实现特定的功能，比如在以优秀的时间复杂度完成一定的运算。</p>
+<p>现在介绍最基础的数据结构：栈和队列。</p>
+<h2 id="%E6%A0%88">栈</h2>
+<p>栈(stack)，又名堆栈，是一种特殊的线性表。</p>
+<p>什么是线性表？百度百科上说：</p>
+<blockquote>
+<p>线性表中数据元素之间的关系是一一对应的。</p>
+</blockquote>
+<p>也就是说：在栈中，每个位置有唯一确定的元素。</p>
+<p>特殊在哪里？特殊在进栈(push)和出栈(pop)操作被我们人为限制了。</p>
+<p>给一张图：</p>
+<p><img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign%3Db4cf8cd69925bc313f5009ca3fb6e6d4/8b82b9014a90f603eab7c55f3912b31bb051eda7.jpg" alt=""></p>
+<p>栈可以想象成一个井。进栈时，只能够扔进去，并且叠在已有元素的最顶端（栈顶）。而出栈时，只能够将最顶端的元素弹出。</p>
+<p>这种性质称为“后进先出”(LIFO, last in first out)。</p>
+<h3 id="%E5%82%A8%E5%AD%98%E6%96%B9%E5%BC%8F">储存方式</h3>
+<p>一般是使用数组储存，像这样：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> <span class="hljs-built_in">stack</span>[maxn], top;
+</div></code></pre>
+<p>top的值就是栈顶的位置。</p>
+<p>如何将一个元素入栈？只需要将当前栈顶位置++，然后赋值即可。</p>
+<p>如何出栈？只需要top--。因为一旦我们入栈，必定会修改相关位置的值，所以以前的值是没有影响的。</p>
+<p>如何判断是否栈为空？当top为0时就为空，否则不空。</p>
+<p>也可以使用STL(standard template library，标准模板库)中的<code>std::stack</code>。具体的使用方法可以上网查一查。</p>
+<h3 id="%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8">栈的应用</h3>
+<ol>
+<li>系统栈。</li>
+</ol>
+<p>计算机在执行任务的时候，每一个函数就是一个栈中的元素。</p>
+<p>当一个函数中调用了其他函数时，会先完成被调用的函数，再继续完成这个函数。</p>
+<p>这也就是dfs算法能实现的原因。</p>
+<ol start="2">
+<li>表达式求值问题。</li>
+</ol>
+<p>详情可以参见“前、中、后缀表达式”。</p>
+<ol start="3">
+<li>括号匹配问题。</li>
+</ol>
+<p>只需要维护一个栈，因为越后面的左括号会跟越前面的右括号匹配，所以正好满足了栈的性质。</p>
+<h2 id="%E9%98%9F%E5%88%97">队列</h2>
+<p>队列(queue)，同样是一种特殊的线性表。</p>
+<p>给一张图：</p>
+<p><img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign%3D35768ebb0ff3d7ca18fb37249376d56c/cdbf6c81800a19d8116a4d8030fa828ba71e46ce.jpg" alt=""></p>
+<p>特殊的地方在于：进队的时候，从队尾进入，出队的时候，从队头弹出。</p>
+<p>这种性质也叫作“先进先出”(FIFO, first in first out)。</p>
+<p>很容易类比过来，在食堂排队的队列就跟我们这里说讲的队列差不多（前提是没有插队）。</p>
+<h3 id="%E5%82%A8%E5%AD%98%E6%96%B9%E5%BC%8F">储存方式</h3>
+<p>一般也是使用数组储存，像这样：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> <span class="hljs-built_in">queue</span>[maxn], front, rear;
+</div></code></pre>
+<p>这里<code>front</code>代表队尾，<code>rear</code>代表队首。</p>
+<p>如何将一个元素入队？只需要将队首后移一位，再赋值就可以了。</p>
+<p>如何出队？直接<code>front++</code>。（思考一下：<strong>为什么不像栈一样将起点固定？</strong>）</p>
+<p>如何判断队列为空？当队首和队尾重合时，队列为空，否则不为空。</p>
+<p>当然也有STL版本的队列，名字是<code>std::queue</code>。同样操作也不介绍。</p>
+<p>为什么不太推崇STL的栈和队列呢？因为太慢了！有时STL是性能瓶颈。</p>
+<p>愿意的话可以使用链式储存，但一般没必要。</p>
+<p>还有队列的优化版本：循环队列。同学们可以自己去了解下。</p>
+<h3 id="%E5%BA%94%E7%94%A8">应用</h3>
+<ol>
+<li>
+<p>根据题意使用队列模拟。</p>
+</li>
+<li>
+<p>宽度优先搜索(bfs, breath first search)。</p>
+</li>
+</ol>
+<p>这是搜索的一种算法，比较重要，同学们可以自行了解。</p>
+<p>经典应用有：走迷宫。</p>
+<h2 id="%E5%90%8E%E9%9D%A2%E7%9A%84%E8%AF%9D">后面的话</h2>
+<p>介绍完了！</p>
+<p>栈和队列是基础的数据结构，学完这两种数据结构之后，大家如果有余力的话，可以尽情地挑战更高级的数据结构。</p>
+<p>学习数据结构的时候，相信大家可能会学着学着一句“WA”。。。因为有的东西真的太巧妙了。</p>
+<p>再见！</p>
+
+    </body>
+    </html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BF%90%E7%AE%97">二进制运算</h1>
+<hr>
+<h2 id="1%E3%80%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">1、基本概念</h2>
+<p>逻辑变量之间的运算称为逻辑运算。二进制数1和0在逻辑上可以代表“真”与“假”、“是”与“否”、“有”与“无”。这种具有逻辑属性的变量就称为逻辑变量。计算机的逻辑运算的算术运算的主要区别是：逻辑运算是<strong>按位</strong>进行的，位与位之间不像加减运算那样有进位或借位的联系。</p>
+<h2 id="2%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6">2、运算符</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>运算</th>
+<th>范例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;</td>
+<td>与(AND)</td>
+<td>0&amp;1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>|</td>
+<td>或(OR)</td>
+<td>0|1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>^</td>
+<td>异或（XOR）</td>
+<td>0^1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>！</td>
+<td>非（NOT）</td>
+<td>!1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>~</td>
+<td>取反</td>
+<td>~1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移</td>
+<td>11100111 &lt;&lt; 2</td>
+<td>10011100</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移</td>
+<td>11100111&gt;&gt;2</td>
+<td>00111001</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>无符号右移</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>##3、位运算</p>
+<blockquote>
+<p>位运算实质是将参与运算的数字转换为二进制，而后逐位对应进行运算。</p>
+</blockquote>
+<h3 id="1%E6%8C%89%E4%BD%8D%E4%B8%8E">(1)按位与(&amp;)</h3>
+<p>法则：<strong>两位全为1，结果为1</strong>，即1&amp;1=1，1&amp;0=0，0&amp;1=0，0&amp;0=0</p>
+<p>特殊用法:</p>
+<p>a、0相与可清零。</p>
+<p>b、与1相与可保留原值，可从一个数中取某些位。</p>
+<p>eg:需要取10101110中的低四位，10101110 &amp; 00001111 = 00001110，即得到所需结果。</p>
+<h3 id="2%E6%8C%89%E4%BD%8D%E6%88%96">(2)按位或(|)</h3>
+<p>法则:<strong>两位只要有一位为1，结果则为1，否则结果为0</strong>,即1|1=1，1|0=1，0|1=1，0|0=0。</p>
+<p>特殊用法:</p>
+<p>a、与0相或可保留原值。</p>
+<p>b、与1相或可将对应位置1。</p>
+<p>eg:将X=10100000的低四位置1，使X | 00001111 = 10101111即可。</p>
+<h3 id="3%E6%8C%89%E4%BD%8D%E5%BC%82%E6%88%96">(3)按位异或(^)</h3>
+<p>法则:**两位为“异”，即一位为1一位为0，则结果为1，否则为0。**即1^1=1，1^0=0，0^1=0，0^0=1。(有点类似于求复合函数的单调性。“同增异减”，这里是“同真异假”)</p>
+<p>特殊用法：</p>
+<p>a、使指定位翻转：找一个数，对应X要翻转的各位为1，其余为0，使其与X进行异或运算即可。例如，X=10101110，使低四位翻转，X ^ 00001111 = 10100001。</p>
+<p>b、与0相异或保留原值。例如X ^ 00000000 = 10101110。</p>
+<p>c、交换两变量的值。（比借助容器法、加减法效率高）原理：一个数对同一个数连续两次进行异或运算，结果与这个数相等。</p>
+<p>因此，交换方法为：A = A ^ B，B = A ^ B，A = A ^ B。</p>
+<h3 id="%EF%BC%884%EF%BC%89%E6%8C%89%E4%BD%8D%E5%8F%96%E5%8F%8D%EF%BC%88%EF%BC%89%E5%92%8C%E9%80%BB%E8%BE%91%E9%9D%9E%EF%BC%88%EF%BC%89">（4）按位取反（~）和逻辑非（!）</h3>
+<p>按位取反“~”：按位取反1变0，0变1</p>
+<p>逻辑非“！”：逻辑取反, false变true,true变false，在C中，只要不是0就是真</p>
+<p>取反法则 :  <strong>将一个数按位取反</strong>，即~ 0 = 1，~ 1 = 0。</p>
+<h3 id="5%E5%B7%A6%E7%A7%BB%EF%BC%88%EF%BC%89%E6%88%96%E5%8F%B3%E7%A7%BB">(5)左移（&lt;&lt;）或右移(&gt;&gt;)</h3>
+<p>左移法则:将一个数左移x位，即左边丢弃x位，右边用0补x位。（若正数,高位补0,负数,高位补1）</p>
+<p>右移法则:将一个数右移若干位，右边舍弃，正数左边补0，负数左边补1。每右移一位，相当于除以一次2。</p>
+<h3 id="6%E6%97%A0%E7%AC%A6%E5%8F%B7%E5%8F%B3%E7%A7%BB">(6)无符号右移</h3>
+<p>法则:将一个数右移若干位，左边补0，右边舍弃。(不论正负,高位均补0)</p>
+<h3 id="7%E6%8B%93%E5%B1%95">(7)拓展:</h3>
+<blockquote>
+<p>对于一个数,计算机要使用一定的编码方式进行存储原码, 反码,补码是机器存储一个具体数字的编码方式。</p>
+</blockquote>
+<p>a、<strong>原码</strong>：一个整数按照绝对值大小转换为二进制即为原码；</p>
+<p>[+1]原 = 0000 0001</p>
+<p>[-1]原 = 1000 0001</p>
+<p>一个8位二进制数的取值范围为[1111 1111，0111 1111],即[-127,127]</p>
+<p>b、<strong>反码</strong>：正数的反码是其本身,负数的反码是在其原码的基础上,符号位不变，其余各个位取反。</p>
+<p>[+1] = [00000001]原 = [00000001]反</p>
+<p>[-1] = [10000001]原 = [11111110]反</p>
+<p>c、<strong>补码</strong>：正数的补码就是其本身,负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1.(即在反码的基础上+1)</p>
+<p>[+1] = [00000001]原 = [00000001]反 = [00000001]补</p>
+<p>[-1] = [10000001]原 = [11111110]反 = [11111111]补</p>
+
+    </body>
+    </html>

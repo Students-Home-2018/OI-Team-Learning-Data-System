@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="devc%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8%EF%BC%88%E6%9C%80%E7%AE%80%E4%BE%BF%EF%BC%89">DevC++安装及使用（最简便）</h1>
+<p>2018.07.07 作者：王樾</p>
+<hr>
+<h3 id="%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D">前面的话</h3>
+<p>欢迎步入信息学竞赛的世界！祝大家<s>玩的开心</s>！</p>
+<p>想编写程序，难道直接弄个notepad就开始写了吗？</p>
+<p>当然不是。你需要搭建编译环境！</p>
+<p>这里介绍的是DevC++的安装，一般的DevC++自带了一个编译器。</p>
+<p>这种东西叫做IDE(intergrated development environment，集成开发环境)，好处就是直接安装这个东西就可以直接搭建编译环境。</p>
+<h2 id="%E5%AE%89%E8%A3%85">安装</h2>
+<p>你可以直接去百度找“DevC++”，但是这个软件很蛋疼，因为它年代已经很久远，有的版本是很老旧的，有的版本在调试的时候又有bug。</p>
+<p>不过师兄师姐手头上有一个bug较少的版本，可以在微信公众号上回复“IDE”找到。</p>
+<p>下载下来就可以安装，只有一个东西要注意一下：安装类型选full，这个东西自带了编译器。</p>
+<h2 id="%E4%BD%BF%E7%94%A8">使用</h2>
+<p>我们使用这个DevC++的方便之处呢，在于可以对单个源文件进行编译运行和调试。相比其他的IDE是不允许的。</p>
+<p>附一张图，没图说个jb。。。</p>
+<p><img src="file:///home/garen/GitHub/OI-Team-Learning-Data-System/images/interface.jpg" alt="图来了！"></p>
+<p>最常用的当然就只有三个：编译、运行、调试。分别是图中写的1、2和3。</p>
+<h3 id="%E7%BC%96%E8%AF%91compile">编译(compile)</h3>
+<p>你只要按一下就可以了，也有快捷键为<code>F9</code>。</p>
+<p>编译完就出现了个下面的话，提示你编译好了。像这样：（编译了10s好慢啊）</p>
+<p><img src="file:///home/garen/GitHub/OI-Team-Learning-Data-System/images/compiled.jpg" alt=""></p>
+<h3 id="%E8%BF%90%E8%A1%8Crun">运行(run)</h3>
+<p>同上，也有快捷键<code>F10</code>。</p>
+<p>按完就出现你的程序，它执行它应该做的事后就结束了。像这样：</p>
+<p><img src="file:///home/garen/GitHub/OI-Team-Learning-Data-System/images/runned.jpg" alt=""></p>
+<hr>
+<p>这里插一个小东西。</p>
+<p>老版的DevC++里面，运行程序会一闪而过。它存在过，但是你还没看到它的内容它就消失了。</p>
+<p>原因是一个程序在<code>main</code>函数<code>return 0</code>之后就会直接关闭。</p>
+<p>那为什么我们现在还能看到它？因为我们人为地暂停了它的结束。</p>
+<p>其实它在<code>return 0</code>的前面写上了些东西，这些东西能够使程序暂停。</p>
+<p>常见的就不说了，可以上网了解一下。</p>
+<hr>
+<p>它后面还有一个长的差不多的，叫做“编译运行”(compile &amp; run)，我经常用这个。</p>
+<h3 id="%E8%B0%83%E8%AF%95debug">调试(debug)</h3>
+<p>主要注意的地方是调试。</p>
+<p>DevC++我最喜欢的一点就是它的单步调试了，相比其他的IDE和gdb（命令行的调试）既不卡又高效。</p>
+<p>了解一个概念叫“断点”(breakpoint)，就是你调试的程序走到这一行会自动停下来然后等你调试。</p>
+<p>如何设置？按下左边的行数，这一行会变红。断点就设置好了。例如我可以在<code>scanf</code>那一句设置断点。</p>
+<p>如何开始调试？按下那个勾！</p>
+<p>之后你的程序就会启动，然后就会发现你的程序走不动了！像这样：</p>
+<p><img src="file:///home/garen/GitHub/OI-Team-Learning-Data-System/images/stopped.jpg" alt=""></p>
+<p>接下来就可以开始你的调试了。</p>
+<p>看看IDE下面的调试菜单，我们主要介绍三个东西：</p>
+<ol>
+<li>
+<p>添加查看。功能就是可以输入一个变量（或常量），然后可以查看它的值而不需要打印出来。例如定义了一个<code>int</code>类型的<code>sum</code>变量，可以在编辑器中选中sum然后按下这个按钮。或者在你左边的格子里右键“新建查看”，输入“sum”。显然前者更简单。。。</p>
+</li>
+<li>
+<p>下一步（快捷键<code>F7</code>）。嗯，就是下一步，与下面的单步进入有不同之处。</p>
+</li>
+<li>
+<p>单步进入（快捷键<code>F8</code>）。主要区别在于“单步”，比如我现在这一步要运行一个函数，如果我单步进入的话会进入这个函数，一步一步地把这个函数走完，而下一步的话会当它是一个基本语句一样执行完就进入下一个语句。</p>
+</li>
+</ol>
+<p>随便按按这个程序就走完了。。。</p>
+<p>调试的意义在于让你知道计算这个答案的过程，也许通过错误的算法得到了错误的答案，想知道到底哪里错了，就可以调试一下。</p>
+<p>具体的调试技巧要大家自己做题去积累，我也说不出来哩。<s>其实是因为太菜</s></p>
+<h2 id="%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</h2>
+<p>也许你的字体又长又细，那么极大可能是因为你的字体设置出问题了。</p>
+<p>打开工具-&gt;编辑器选项-&gt;显示，里面就可以改字体了。</p>
+<p>我喜欢的字体是consolas，不过在DevC++里面放大不好看比较可惜。</p>
+<p>那种有问题的字体好像是Courier New，作等宽字体好像不错。反正改过来就是了。</p>
+<h2 id="%E5%90%8E%E9%9D%A2%E7%9A%84%E8%AF%9D">后面的话</h2>
+<p>有一个简单的编写程序的环境，是学习编程的第一步！</p>
+<p>当然还有好多好多步等你去走。。。</p>
+<p>如果是完全没接触过相关内容的，可以不去看那一篇装VS Code的了，免得看得头皮发麻。。。</p>
+<p>再见！</p>
+
+    </body>
+    </html>

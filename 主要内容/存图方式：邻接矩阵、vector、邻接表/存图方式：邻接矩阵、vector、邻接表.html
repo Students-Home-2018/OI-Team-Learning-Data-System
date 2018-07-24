@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="%E5%AD%98%E5%9B%BE%E6%96%B9%E5%BC%8F%EF%BC%9A%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E3%80%81vector%E3%80%81%E9%82%BB%E6%8E%A5%E8%A1%A8">存图方式：邻接矩阵、vector、邻接表</h1>
+<p>2018.06.17 作者：王樾</p>
+<hr>
+<h2 id="%E7%9F%A5%E8%AF%86%E5%BC%95%E5%85%A5">知识引入</h2>
+<p>前面我们有学习有关图的知识，知道了各种图的种类、性质等。</p>
+<p>如果没有把图存起来的话，空谈图又有什么意义呢？</p>
+<h2 id="%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D">概念介绍</h2>
+<p>存图，就是将图的有关信息记录下来。</p>
+<p>比如从1点到3点有一条边权为2的有向路径。那么将这个信息记录下来的方法就是存图方式。</p>
+<h2 id="%E5%AD%98%E5%9B%BE%E6%96%B9%E5%BC%8F">存图方式</h2>
+<p>目前我所知的存图方式有三种：<strong>邻接矩阵</strong>、<strong>邻接表</strong>、<strong>vector</strong>。</p>
+<p>三种存图方式各有好处，下面来介绍。</p>
+<h3 id="%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5">邻接矩阵</h3>
+<p>先解释下名称。邻接，意思是<strong>内存空间是连续的</strong>。矩阵，可以类似于<strong>二维数组</strong>，是差不多的。</p>
+<p>邻接矩阵，说白了就是使用一个二维数组，将图的信息记录下来。</p>
+<p>设这张图有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">n</span></span></span></span>个结点，那我们一般就要开一个<code>G[n + 1][n + 1]</code>的二维数组。（G是grapics的简称）</p>
+<p>为什么要加1？因为数组的第一位是0，开<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathit">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>的话最后一位是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">n</span></span></span></span>。</p>
+<p>一般不将图的编号向前挪一位，把1变成0。<strong>其实只是浪费一点点空间并不多</strong>。</p>
+<p>那么我们就有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>个结点，第一维表示一条路的起点，第二维表示终点。其实<code>G[i][j]</code>的意思就是询问i点到j点的路径长度。</p>
+<p>所以对于1点到3点有一条边权为2的有向路径，我们只要进行一个操作：<code>G[1][3] = 2;</code>就可以直接添加这一条边。</p>
+<p>怎么表示两个点不连通？一般的方法是记录他们的距离为INF（无穷大）。这个INF由题目决定。INF过大，松弛时可能会出问题。INF过小，可能变成图的一部分。</p>
+<p>初始状态当然所有点都不连通，所以<strong>邻接矩阵初始化的时候记得全都赋为INF</strong>！</p>
+<p>初始化邻接矩阵可以用一个便捷的操作解决：<code>memset(G, 0x3f, sizeof(G));</code>最后会解释这个操作。</p>
+<p>在https://www.cnblogs.com/XMU-hcq/p/6065057.html找到了一张图片。</p>
+<p><img src="https://images2015.cnblogs.com/blog/1005320/201611/1005320-20161115153351529-548277748.png" alt=""></p>
+<p>这里没有边权，所以将有边设为1。</p>
+<p>这里把没有边连接设为0不好。这样不方便我们判断连通以及算最短路（后面的知识）。现在请大家不要像这样做。</p>
+<p>memset操作其实原来是用来操作字符串数组的。一个char是8位二进制表示的，而一个int一般是32位的。所以使用memset给char数组赋值0x3f，将来得到的每一个元素值都是0x3f。而给int赋值的结果将会是0x3f3f3f3f。因为32/8=4，所以会重复四次。所以解释了memset给数组赋值时有时会出现奇怪的数。而赋值0是没问题的，思考一下为什么。</p>
+<h3 id="%E9%82%BB%E6%8E%A5%E8%A1%A8">邻接表</h3>
+<p>上面的邻接矩阵是针对点来建立的，针对的是点与点之间的关系。而邻接表更针对的是边。</p>
+<p>这里介绍的是数组实现的邻接表。一般也是这种用法。</p>
+<p>邻接表使用的是一种链式的思想，将所有起始点相同的边串成一条链表，每次添加一条边，就将这条边插入在链表的头部。</p>
+<p>如果想要遍历一个点所连接的所有点的话，直接在链表上进行询问即可。</p>
+<p>具体图示可以看下这个博客：<a href="https://www.cnblogs.com/ahalei/p/3651334.html">https://www.cnblogs.com/ahalei/p/3651334.html</a></p>
+<p>然后介绍代码实现，我先给出代码：</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edges</span>
+{</span>
+    <span class="hljs-keyword">int</span> next, to, weight;
+} e[maxm];<span class="hljs-comment">//有向图不用改，无向图要乘2</span>
+<span class="hljs-keyword">int</span> head[maxn], tot;
+</div></code></pre>
+<p>这是一个标准的邻接表。这里自定义了一个Edges结构，表示的是一条边。</p>
+<p>next表示这条边在链表中的下一个元素，to表示这条边的终点，weight表示边权。</p>
+<p>head[i]表示以i为起点的链表的第一个元素。</p>
+<p>tot表示边的编号，因为是链式存储，所以内存空间并不需要连续。</p>
+<p>如何添加一条边？给出代码：</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">link</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> w)</span>
+</span>{
+    tot++;
+    e[tot].to = v;
+    e[tot].weight = w;
+    e[tot].next = head[u];
+    head[u] = tot;
+}
+</div></code></pre>
+<p>主要问题在于最后的操作。这个操作的意思是将一个元素添加到链表首部。</p>
+<p>为什么不要顺序地添加到尾部？因为如果添加到尾部，就需要进行一次对该链表的遍历，找到最后一个后再进行修改。相比于直接添加到首部，耗费的时间更多，性能不优秀。</p>
+<p>如何枚举以某个点u为起点的所有边？代码如下：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = head[u]; i; i = e[i].next)
+{
+    <span class="hljs-comment">//do something you want to do</span>
+}
+</div></code></pre>
+<p>注意：i表示的是边的编号。想要取得相应的信息需要在e数组中取得。</p>
+<h3 id="vector">vector</h3>
+<p>这种存图方式并不常见，但也有人用。大家了解一下即可。</p>
+<p>其实vector的存图方式是模仿邻接表的。这种存图方式有时像邻接矩阵，有时像邻接表。</p>
+<p>这是它的核心内容：<code>std::vector&lt;int&gt; G[maxn];</code></p>
+<p>vector是一种不定长的数组，自动省略了第二维。它的第一维是定长的，而第二维不定长。</p>
+<p>如何插入边？其实就一句话：<code>G[u].push_back(v);</code></p>
+<p>如何遍历一个点为起点的边？也是用for循环展开：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; G[u].size(); i++)
+{
+    <span class="hljs-keyword">int</span> v = G[u][i];
+    <span class="hljs-comment">//do something you want to do</span>
+}
+</div></code></pre>
+<p>这里的i就没什么意义了，只是用来取出v。</p>
+<p>上面的例子只放了个v进去，但是如果想维护的图有边权怎么解决？</p>
+<p>使用std::pair或者自定义一个包含v和weight的结构即可。然后上面的<int>变为结构名称。请同学们自己实现。</p>
+<h2 id="%E5%90%84%E7%A7%8D%E5%AD%98%E5%9B%BE%E6%96%B9%E5%BC%8F%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9">各种存图方式的优缺点</h2>
+<h3 id="%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5">邻接矩阵</h3>
+<p>查询路径或判断连通<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>，遍历边<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>，修改<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。</p>
+<p>适用于稠密图。</p>
+<h3 id="%E9%82%BB%E6%8E%A5%E8%A1%A8">邻接表</h3>
+<p>查询路径或判断连通最坏<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>e</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(e)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">e</span><span class="mclose">)</span></span></span></span>（这里的e代表所在链表长度），遍历边也是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>e</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(e)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">e</span><span class="mclose">)</span></span></span></span>，修改<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。</p>
+<p>适用于稀疏图。</p>
+<p>vector就不介绍了。</p>
+<h2 id="%E5%90%8E%E9%9D%A2%E7%9A%84%E8%AF%9D">后面的话</h2>
+<p>存图方式是接下来各种图论算法的基础，也非常重要。</p>
+<p>希望大家能够学到。</p>
+<p>再见。。。</p>
+<h2 id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</h2>
+<p><a href="http://www.cnblogs.com/ahalei/">http://www.cnblogs.com/ahalei/</a> 这是啊哈磊的博客，他写的很多东西浅显易懂还有趣，大家可以去了解一波。</p>
+
+    </body>
+    </html>
