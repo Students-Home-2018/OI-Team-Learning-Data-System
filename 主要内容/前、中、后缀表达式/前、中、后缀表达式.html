@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="%E5%89%8D%E3%80%81%E4%B8%AD%E3%80%81%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">前、中、后缀表达式</h1>
+<p>2018.06.07  作者：王樾</p>
+<hr>
+<h2 id="%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">中缀表达式</h2>
+<p>其实就是我们日常生活中见到的表达式。比如<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mo>+</mo><mn>5</mn><mo>(</mo><mn>4</mn><mo>+</mo><mn>5</mn><mo>∗</mo><mn>2</mn><mo>)</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">6+5(4+5*2)-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mopen">(</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
+<p>中缀表达式对于人是较容易理解的，但是对于计算机就不同了。</p>
+<p>因为不同运算符有不同的运算优先级，计算机是无法用一个规范的算法程序解读出一个中缀表达式的。</p>
+<p>那什么表达式可以方便计算机读取表达式呢？</p>
+<p>答案就是：使用<strong>前缀表达式</strong>或者<strong>后缀表达式</strong>。</p>
+<p>这里主要介绍后缀表达式。</p>
+<h2 id="%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">后缀表达式</h2>
+<p>我先直接给出上面这个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mo>+</mo><mn>5</mn><mo>(</mo><mn>4</mn><mo>+</mo><mn>5</mn><mo>∗</mo><mn>2</mn><mo>)</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">6+5(4+5*2)-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mopen">(</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>的后缀表达式：</p>
+<p><code>6 5 4 5 2 * + * + 1 -</code></p>
+<p>后缀表达式的一个特点就是：<strong>没有括号！也没有任何的运算符优先级！</strong></p>
+<p>在后缀表达式中，当你读到一个运算符的时候，请看到它前面的两个数（也许是已经计算好的中间结果），用这个运算符对前面这两个数做运算。</p>
+<p>运算后的数，就将它原封不动地放在原来的地方，这个数会参加接下来的运算。</p>
+<p>接下来让我们对这个表达式一层一层地展开：</p>
+<pre><code>6 5 4 5 2 * + * + 1 -
+6 5 4 10 + * + 1 -
+6 5 14 * + 1 -
+6 70 + 1 -
+76 1 -
+75
+</code></pre>
+<p>不如跟着按下计算器，是不是对的呢？</p>
+<p>在后缀表达式中，**众生平等！**任何运算符在后缀表达式中没有优先级。</p>
+<p>对电脑来说，求一个中缀表达式的时候，一般就要将它转化为后缀表达式，接下来对它进行求值，就可以简便地求出表达式的值。</p>
+<h2 id="%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">怎么实现中缀表达式转化为后缀表达式</h2>
+<p>有一种方法是运用表达式树，但是我这里不详细介绍。想要了解的同学可以直接找blog看，自学是很重要的素质。</p>
+<p>这里着重讲述运用<strong>栈</strong>的方法。</p>
+<h3 id="%E6%A0%88">栈</h3>
+<p>首先一定要介绍下栈这种数据结构！</p>
+<p>栈(stack)是一种线性数据结构。所谓线性就是内存是连续的吧。</p>
+<p>支持push和pop操作。并且有以下规定：后进先出(First In First Out, FIFO)。</p>
+<p>在生活能找到许多栈的应用：</p>
+<p>算法的详细介绍如下：</p>
+<ul>
+<li>
+<p>先直接一行读入我们的表达式。</p>
+</li>
+<li>
+<p>接下来进行字符串的遍历。</p>
+</li>
+<li>
+<p>若读到的字符是数字，就试着将整个数字读完。读完整个数字之后<strong>直接输出</strong>！</p>
+</li>
+<li>
+<p>若读到的字符是运算符，则根据运算符优先级，将栈底下的所有运算优先级高于或等于的运算符弹出。</p>
+</li>
+<li>
+<p>运算符要注意括号的优先级：左括号在栈外优先级最高（直接入栈即可），但在栈内优先级最低（别的运算符可以直接入栈）。</p>
+</li>
+<li>
+<p>读到右括号的时候，保持出栈，同时输出。读到左括号为止，<strong>但是左括号不输出</strong>。</p>
+</li>
+<li>
+<p>字符串遍历后，可能栈内还有剩余，只要依次弹出知道栈为空即可。</p>
+</li>
+</ul>
+<p>后缀表达式也叫做逆波兰式，因为跟波兰式是反过来的。</p>
+<p>所谓波兰式就是<strong>前缀表达式</strong>。</p>
+<h2 id="%E5%89%8D%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">前缀表达式</h2>
+<p>这里对前缀表达式也只提供感性理解。</p>
+<p>跟后缀表达式恰恰相反，它的运算符在前面，跟紧跟在后面的两个数字发生关系，参与运算。</p>
+<p>将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mo>+</mo><mn>5</mn><mo>(</mo><mn>4</mn><mo>+</mo><mn>5</mn><mo>∗</mo><mn>2</mn><mo>)</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">6+5(4+5*2)-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mopen">(</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>变成前缀表达式就是：</p>
+<pre><code>- + * + * 5 2 4 5 6 1
+- + * + 10 4 5 6 1
+- + * 14 5 6 1
+- + 70 6 1
+- 76 1
+75
+</code></pre>
+<p>将这个前缀表达式等价变换，得到<code>- 1 + * + * 5 2 4 5 6</code>。</p>
+<p>跟前面得到的后缀表达式：<code>6 5 4 5 2 * + * + 1 -</code>比较。</p>
+<p><strong>恰好是相反的！</strong></p>
+<p>运算符在前面的就是前缀表达式，在后面的就是后缀了。</p>
+<p>一般用到的是后缀表达式，因为实现方便。</p>
+<h2 id="%E5%90%8E%E9%9D%A2%E7%9A%84%E8%AF%9D">后面的话</h2>
+<p>初赛范围中，应该学会前、中、后缀表达式的相互转换，不需要转化为程序语言，只需要感性理解就可以了。</p>
+<p>如果想有更深刻的理解，则可以试着将这种算法实现为代码。这是锻炼码力的好题目。</p>
+<hr>
+<p>再见！</p>
+
+    </body>
+    </html>

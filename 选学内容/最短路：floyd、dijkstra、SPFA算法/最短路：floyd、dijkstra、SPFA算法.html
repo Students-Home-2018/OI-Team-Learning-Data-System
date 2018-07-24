@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="%E6%9C%80%E7%9F%AD%E8%B7%AF%EF%BC%9Afloyd%E3%80%81dijkstra%E3%80%81spfa%E7%AE%97%E6%B3%95">最短路：floyd、dijkstra、SPFA算法</h1>
+<p>2018.06.17 作者：王樾</p>
+<hr>
+<h2 id="%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D">前面的话</h2>
+<p>最短路是图论的较基础内容，但相对于前面的内容更有挑战性。</p>
+<p>一般设置在完善程序的最后一题，作为图论内容考察。</p>
+<p>如果能掌握一条大题的分，其实复赛也不远了。（这是真的）</p>
+<h2 id="%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D">概念介绍</h2>
+<p>我们把在一个图上，从一个点到另一个点，能经过的最小边权或点权之和，成为最短路。</p>
+<p>这种说法给了我们对边权的一种感性理解，可以理解为是一种长度。</p>
+<p>其实我更同意的说法是经过这条边或者这个点所需要花费的代价。</p>
+<p>一般给你一张图，问你<strong>一个点到一个点的最小代价、最短距离、最快时间</strong>等问题，可以抽象成为最短路模型。</p>
+<h2 id="%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95">最短路算法</h2>
+<p>这里介绍三种最短路算法：floyd、dijkstra、SPFA算法。</p>
+<h3 id="floyd%E7%AE%97%E6%B3%95">floyd算法</h3>
+<p>floyd算法的本质是动态规划（dynamic programming, dp）。这里不对dp做深刻介绍。</p>
+<p>在csdn上找到了一个解释，出处：<a href="https://blog.csdn.net/zhao5502169/article/details/77505811">https://blog.csdn.net/zhao5502169/article/details/77505811</a></p>
+<p><img src="https://img-blog.csdn.net/20170823144027524?watermark%2F2%2Ftext%2FaHR0cDovL2Jsb2cuY3Nkbi5uZXQvemhhbzU1MDIxNjk%3D%2Ffont%2F5a6L5L2T%2Ffontsize%2F400%2Ffill%2FI0JBQkFCMA%3D%3D%2Fdissolve%2F70%2Fgravity%2FSouthEast" alt=""></p>
+<p>看不懂也没有关系，随着以后的学习，相信很快就能弄懂的。</p>
+<p>那么弄到最后，发现只与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>[</mo><mi>j</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">f[i][j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>[</mo><mi>k</mi><mo>]</mo><mo>+</mo><mi>f</mi><mo>[</mo><mi>k</mi><mo>]</mo><mo>[</mo><mi>j</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">f[i][k]+f[k][j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span>有关。</p>
+<p>即使不看上面的证明，你也许也能发现：i、j间的最短路，就从这两个值更新而来。</p>
+<p>如何更新？取最小值！</p>
+<p>代码虽然简短（只有四行），但也有值得注意的地方。</p>
+<p>代码请看文件夹中的floyd.cpp文件。</p>
+<p>求出来的G[i][j]就是这两点间的最短路。并且无论什么点都能查询。这就是所谓的<strong>多源最短路算法</strong>。</p>
+<p>因为三个循环，所以算法时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>3</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，该算法一般使用邻接矩阵储存。</p>
+<p>之前说过，不连通一般使用路径长度为INF，才能避免被floyd更新。</p>
+<h3 id="dijkstra%E7%AE%97%E6%B3%95">dijkstra算法</h3>
+<p>dijkstra算法与一个前面的算法有异曲同工之妙。先不告诉答案。</p>
+<p>dijkstra是单源最短路算法，即只能更新出一个起点对所有点的最短路径。</p>
+<p>dijkstra算法的核心思想是这么一个结论：<strong>目前的最短路，加上最短的边权到达一个点，则这一条路必定是最短路</strong>！</p>
+<p>证明并不会，愿意的同学可以自行百度。</p>
+<p>因为里面的“最短边权”，可以看出这是一种贪心的算法。每次寻找当前未访问的点的最短距离，然后层层扩展，层层更新。</p>
+<p>所运用的数组共有两个：dist数组，表示从起点到该点的最短路；vis数组，表示是否访问过。</p>
+<p>初始化dist数组，可以把以起点的第二维全部搬进dist数组。</p>
+<p>具体参见“dijkstra.cpp”，里面有详细注释。</p>
+<p>算法时间复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，一般也是用邻接矩阵储存。</p>
+<p>这里附上刘汝佳《算法竞赛入门经典（第二版）》中dijkstra算法的伪代码：</p>
+<pre><code>清除所有点的标号
+设d[0]=0，其他d[i]=INF
+循环n次 {
+    在所有未标号结点中，选出d值最小的结点x
+    给结点x标记
+    对于从x出发的所有边(x,y)，更新d[y] = min{d[y], d[x]+w(x,y)}
+}
+</code></pre>
+<p>前面说了这个算法与前面的某一个算法很像，答案是：<strong>prim算法</strong>！</p>
+<p>共同点是：都使用贪心思想、都是一种蓝白点思想、用到的数组完全一致。</p>
+<p>所谓的蓝白点思想由vis数组体现。vis为0的是白点，vis为1的是蓝点。</p>
+<p>所以其实prim算法也有堆优化。</p>
+<h3 id="ps%EF%BC%9A%E5%A0%86%E4%BC%98%E5%8C%96%E7%9A%84dijkstra%E7%AE%97%E6%B3%95">ps：堆优化的dijkstra算法</h3>
+<p>考虑一下为什么未优化的dijkstra复杂度为什么是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。</p>
+<p>第一个循环用来进行<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathit">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>次扩展，第二个循环用来找出最小边（dist最小的）与该边终点。</p>
+<p>我们可以优化第二个循环，有一个数据结构可以轻松地拿出最小值：堆(heap)。</p>
+<p>这里给出啊哈磊关于堆的介绍，同学们自行阅读：</p>
+<p><a href="http://www.cnblogs.com/ahalei/p/3783543.html">http://www.cnblogs.com/ahalei/p/3783543.html</a></p>
+<p><a href="https://www.cnblogs.com/ahalei/p/3792155.html">https://www.cnblogs.com/ahalei/p/3792155.html</a></p>
+<p>便捷的STL实现方式是使用<strong>优先队列</strong>(priority_queue)。</p>
+<p>那么我们可以把边权与边的终点用一个struct整合到一起，然后按边权维护小根堆，取出堆首就是最小值了。</p>
+<p>同样给出代码实现，参见“dijkstra + heap.cpp”。</p>
+<p>算法复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nlogm)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">m</span><span class="mclose">)</span></span></span></span>，对于稀疏图比较好，稠密图使用堆优化有时还会更慢。</p>
+<p>为什么有个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">logm</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">m</span></span></span></span>？因为堆插入<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(logn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>，堆删除堆顶<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(logn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>。</p>
+<h3 id="spfa%E7%AE%97%E6%B3%95">SPFA算法</h3>
+<h4 id="%E5%B0%8F%E8%B6%A3%E4%BA%8B">小趣事</h4>
+<p>SPFA算法，其英文名称是Shortest Path Faster Algorithm，名字好像很高级，但其实就是Bellman-Ford算法的队列优化而已。</p>
+<p>其实这种算法在Bellman-Ford算法论文上就提出来了，然后名为段凡丁的这个人挖出了这个队列优化，发表了篇论文，结果声名大噪。。。</p>
+<p>他通过随机实践，就说该算法的时间复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>K</mi><mi>E</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(KE)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.07153em;">K</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span>，其中K是小常数，约等于2。。。</p>
+<p>其实，该算法达到最坏复杂度时，该小常数与N同阶。。。也就相当于没有优化。</p>
+<p>这个故事告诉我们：证明当然要严谨地证明，不然出糗了就尴尬了。</p>
+<h4 id="%E6%AD%A3%E6%96%87">正文</h4>
+<p>首先简单地介绍Bellman-Ford算法，也很简单。通过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathit">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>轮，每一轮操作遍历所有的边进行松弛(relax)操作。</p>
+<p>所谓松弛，说白了就是(s, v)路径分解为(s, u) + (u, v)路径，而(s, v)路径的答案取不分解与分解两种情况中权值的最小值。</p>
+<p>代码不打，也不重要。一般我们使用SPFA，最慢也就跟它一样快。</p>
+<p>SPFA思想大致与上述思想差不多，但实际代码样子也有很大的区别。</p>
+<p>需要用到的数组：dist数组，单源最短路都要的；vis数组，判断是否在队列中。</p>
+<p>首先一样起点dist为0，其他点为INF。然后把起点扔进队列中，等待更新。</p>
+<p>只要队列不为空，就说明还需要松弛，就取出队首元素，队首出队。</p>
+<p>拿出该点后，遍历以之为起点的所有边，如果能松弛，那么我们就松弛。</p>
+<p>能松弛的点，我们一般会加入队列，但是重复添加可能会影响速度，所以只当没有在队列中，我们才加入队列。</p>
+<p>代码实现在“SPFA.cpp”中。</p>
+<p>算法复杂度上面已经说了，玄学复杂度。但是随机图实践性很好。</p>
+<h2 id="%E5%90%84%E7%A7%8D%E7%AE%97%E6%B3%95%E4%BD%BF%E7%94%A8%E8%8C%83%E5%9B%B4">各种算法使用范围</h2>
+<h3 id="%E5%AF%B9%E5%AD%98%E5%9B%BE%E6%96%B9%E5%BC%8F">对存图方式</h3>
+<p>一般如果使用邻接矩阵的话，就意味着点比较少或者边比较多。一般直接floyd都差不多能过，而如果题目只要单源的话，就使用不优化的dijkstra。</p>
+<p>而使用邻接表的话，可以使用堆优化版dijkstra或者SPFA。两者对随机图都是差不多的。</p>
+<h3 id="%E5%AF%B9%E5%9B%BE%E7%9A%84%E6%80%A7%E8%B4%A8">对图的性质</h3>
+<p>正权图对dijkstra和SPFA都没问题，而负权图dijkstra算法就不能使用了。此时就只能使用SPFA算法。</p>
+<h3 id="%E5%AF%B9%E5%87%BA%E9%A2%98%E4%BA%BA">对出题人</h3>
+<p>SPFA因为最坏复杂度是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nm)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit">m</span><span class="mclose">)</span></span></span></span>或者<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>V</mi><mi>E</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(VE)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span>（两者等价），所以一些出题人会在一两个测试点上出极端情况卡掉SPFA。</p>
+<p>当然，如果题目是负权图，那么出题人就不会卡SPFA了吧。。。</p>
+<h2 id="%E6%9C%80%E5%90%8E%E7%9A%84%E8%AF%9D">最后的话</h2>
+<p>这些最短路内容，开始学的时候一般是靠死记的。不过慢慢就会明白的。</p>
+<p>这是初赛内容的选学部分，所以会有点难。但是如果想<s>公费去广州</s>那么就应该认真学。</p>
+<p>再见。。。</p>
+
+    </body>
+    </html>
